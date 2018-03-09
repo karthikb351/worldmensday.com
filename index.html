@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>When is International Men's Day?</title>
+  <meta name="description" content="Find when we can celebrate men's rights!">
+  <meta name="author" content="Karthik Balakrishnan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csspin/1.1.4/csspin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <section class="header" style="margin-bottom: 10rem">
+      <h3 class="title">When is International Men's Day?</h3>
+      <h1 id="dateEl" class="animated"></h1>
+      <div id="subtitleEl" class="animated" style="display:none">
+        <p>International Men's Day is a day to celebrate men. People from all over the world will gather today to discuss men's issues, highlight male role models, and provide a safe space to discuss how we can better forward men's rights.</p>
+      </div>
+      <div id="spinnerEl" class="cp-spinner cp-round animated"></div>
+    </section>
+    <div class="docs-section animated" id="shareEl" style="display:none">
+      <div class="sharethis-inline-share-buttons"></div>
+    </div>
+  </div>
+  <div style="position: absolute; bottom: 0;left: 0;right: 0;text-align: center;">
+    <p>By <a href="https://twitter.com/karthikb351">@karthikb351</a>. Don't @ me.</p>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5aa211b15df0b9001309efa7&product=inline-share-buttons"></script>
+  <script type="text/javascript">
+    var now = moment();
+
+    var spinnerEl = document.getElementById('spinnerEl')
+    var dateEl = document.getElementById('dateEl')
+    var subtitleEl = document.getElementById('subtitleEl')
+    var shareEl = document.getElementById('shareEl')
+
+
+
+    setTimeout(function() {
+      spinnerEl.style.display = 'none'
+
+      if (now.format("DDD") === "67") {
+        var next = now.clone().endOf("day")
+        var diff = next.diff(now, 'minutes')
+        if (diff > 60) {
+          dateEl.innerHTML = "It's in "+parseInt(diff/60)+ " hour(s) and "+ diff%60 + " minutes!"
+        }
+      } else {
+        subtitleEl.style.display = 'block'
+        dateEl.innerHTML = "It's today, " + now.format("dddd, MMMM Do YYYY") + "!"
+        subtitleEl.className += " fadeIn"
+      }
+      dateEl.className += " fadeIn"
+      shareEl.style.display = 'block'
+      shareEl.className += " fadeIn"
+    },
+    2000)
+
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115451267-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115451267-1');
+</script>
+
+</body>
+</html>
