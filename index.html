@@ -66,6 +66,8 @@
         var diff = next.diff(now, 'minutes')
         if (diff > 60) {
           dateEl.innerHTML = "It's in "+parseInt(diff/60)+ " hour(s) and "+ diff%60 + " minutes!"
+        } else {
+          dateEl.innerHTML = "It's in " + diff%60 + " minutes!"
         }
       } else {
         subtitleEl.style.display = 'block'
