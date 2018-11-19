@@ -35,7 +35,11 @@
       <h3 class="title">When is International Men's Day?</h3>
       <h1 id="dateEl" class="animated"></h1>
       <div id="subtitleEl" class="animated" style="display:none">
-        <p>International Men's Day is about the celebration of men. People from all over the world will gather today to discuss men's issues, highlight male role models, and provide a safe space to discuss how we can better forward men's rights.</p>
+        <p>Today is all about the celebration of men. People from all over the world will gather today to discuss men's issues, highlight male role models, and provide a safe space to discuss how we can better forward men's rights.</p>
+      </div>
+      <div id="secondSubtitleEl" class="animated" style="display:none">
+        <p>And then they'll do the same thing tomorrow, and the day after that.</p>
+        <span style="font-size: 1.7em;">🎉 </span>
       </div>
       <div id="spinnerEl" class="cp-spinner cp-round animated"></div>
     </section>
@@ -54,6 +58,7 @@
     var spinnerEl = document.getElementById('spinnerEl')
     var dateEl = document.getElementById('dateEl')
     var subtitleEl = document.getElementById('subtitleEl')
+    var secondSubtitleEl = document.getElementById('secondSubtitleEl')
     var shareEl = document.getElementById('shareEl')
 
 
@@ -73,6 +78,11 @@
         subtitleEl.style.display = 'block'
         dateEl.innerHTML = "It's today, " + now.format("dddd, MMMM Do YYYY") + "!"
         subtitleEl.className += " fadeIn"
+
+        setTimeout(function() {
+          secondSubtitleEl.style.display = 'block'
+          secondSubtitleEl.className += " fadeIn"
+        }, 2000)
       }
       dateEl.className += " fadeIn"
       shareEl.style.display = 'block'
