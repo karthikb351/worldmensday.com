@@ -46,10 +46,11 @@
     <div class="docs-section animated" id="shareEl" style="display:none">
       <div class="sharethis-inline-share-buttons"></div>
     </div>
+    <div style="text-align: center; padding-top: 100px">
+      <p>By <a href="https://twitter.com/karthikb351">@karthikb351</a>. Don't @ me.</p>
+    </div>
   </div>
-  <div style="position: absolute; bottom: 0;left: 0;right: 0;text-align: center;">
-    <p>By <a href="https://twitter.com/karthikb351">@karthikb351</a>. Don't @ me.</p>
-  </div>
+ 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
   <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5aa23c2b5df0b9001309efbd&product=inline-share-buttons"></script>
   <script type="text/javascript">
@@ -74,6 +75,10 @@
         } else {
           dateEl.innerHTML = "It's in " + diff%60 + " minutes!"
         }
+        subtitleEl.innerHTML = "<p>It's not long now, hang in there buddy boy!</p>";
+        subtitleEl.style.display = 'block'
+        subtitleEl.className += " fadeIn"
+
       } else {
         subtitleEl.style.display = 'block'
         dateEl.innerHTML = "It's today, " + now.format("dddd, MMMM Do YYYY") + "!"
