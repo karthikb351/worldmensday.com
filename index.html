@@ -67,7 +67,7 @@
     setTimeout(function() {
       spinnerEl.style.display = 'none'
 
-      if (now.format("DDD") === "67") {
+      if (now.format("MMM D") === "Mar 8") {
         var next = now.clone().endOf("day")
         var diff = next.diff(now, 'minutes')
         if (diff > 60) {
